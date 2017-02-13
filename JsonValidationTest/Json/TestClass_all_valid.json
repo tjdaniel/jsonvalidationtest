@@ -1,0 +1,10 @@
+﻿{
+    "nonNullableText": "",
+    "notEmptyText": "xyz",
+    "minLenText": "ABCDE",
+    "mustBeValidOption": true,
+    "validOption": "Option3",
+    "option": "Option3",
+    "textItems": [ "Item1", "Item2", "Item3" ],
+    "utcDate" :  "2017-02-02T08:34Z"
+}

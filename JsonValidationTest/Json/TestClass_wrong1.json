@@ -1,0 +1,10 @@
+﻿{
+    "nonNullableText": null,
+    "notEmptyText": "",
+    "minLenText": "This text is too long",
+    "mustBeValidOption": true,
+    "validOption": "Option3",
+    "option": "Option1",
+    "textItems": [ "SingleWrongItem" ],
+    "utcDate" :  "2017-02-02T08:34"
+}

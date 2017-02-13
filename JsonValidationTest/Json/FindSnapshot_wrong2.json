@@ -1,0 +1,26 @@
+﻿{
+    "outputPath": "C:\\Publisher_Export",
+    "parameters": [
+        {
+            "name": ":IS_TEMPORARY",
+            "typeName": "Boolean",
+            "selectedValues": [
+                { "value": "False" }
+            ]
+        },
+        {
+            "name": ":FUND",
+            "typeName": "String",
+            "selectedValuesTTT": [
+                { "value": 112 }
+            ]
+        }
+    ],
+    "csv": {
+        "culture": "de-DE",
+        "encoding": "utf-8",
+        "fieldDelimiter": ",",
+        "useEnclosure": false,
+        "writeIndexFileTTT": true
+    }
+}
