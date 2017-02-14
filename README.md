@@ -1,7 +1,7 @@
 # jsonvalidationtest
 
 Proof of concept for usability (from a software development perspective) and versatility of different validation techniques.  
-The data to be validated is input data deserialized from JSON, fed into a REST API (ASP.NET Web API).
+The data to be validated is input data de-serialized from JSON, fed into a REST API (ASP.NET Web API).
   
 The three options to be considered are:
 
@@ -13,7 +13,7 @@ The three options to be considered are:
 #### JSON Schema Validation
 I decided not to include JSON Schema Validation because:
 
-Although many of the required validations are possible, this is IMO not a good way to validate input data in a REST API Service. JSON Schema validation must be integrated somehow into ASP.NET Web API. The only approach I could find was to [*subclass* the `JsonMediaTypeFormatter`](http://vitalyal.blogspot.de/2013/10/json-schema-validation-in-web-api.html). It would also be a redundant "island"-approach. An explicit validation of the deserialized input is  present anyway as you **must not** trust user's input. A possible use case for JSON Schema might be the pre-validation of sender generated data which is out of scope of this considerations.
+Although many of the required validations are possible, this is IMO not a good way to validate input data in a REST API Service. JSON Schema validation must be integrated somehow into ASP.NET Web API. The only approach I could find was to [*subclass* the `JsonMediaTypeFormatter`](http://vitalyal.blogspot.de/2013/10/json-schema-validation-in-web-api.html). It would also be a redundant "island"-approach. An explicit validation of the de-serialized input is  present anyway as you **must not** trust user's input. A possible use case for JSON Schema might be the pre-validation of sender generated data which is out of scope of this considerations.
 
 #### Validation via Data Annotations
 
@@ -51,19 +51,19 @@ The business model properties are tagged with **DataAnnotations**. Also defined 
 
 A set of more different JSON-Files representing the business models are provided containing valid or invalid data or wrong JSON format.
 
-All JSON files are deserialized and passed through (first) a validation with **DataAnnotations** and (second) with **FluentValidation**.
+All JSON files are de-serialized and passed through (first) a validation with **DataAnnotations** and (second) with **FluentValidation**.
 
 The scenarios show that both validation techniques are well capable of handling the requirements of validating the incoming business model graph. 
 
-To see the results, download, compile and execute the project. The console output logs the deserialization and validation resuls for each file processed.
+To see the results, download, compile and execute the project. The console output logs the de-serialization and validation results for each file processed.
 
-It is important to note that even when an embedded object is wrongly JSON-formatted, the embedding object is present and validated. The deserialization is configured in the way that it logs format errors and continues deserialization. This might be different in production implementations.
+It is important to note that even when an embedded object is wrongly JSON-formatted, the embedding object is present and validated. The de-serialization is configured in the way that it logs format errors and continues de-serialization. This might be different in production implementations.
 
 #### Test Class Validation Scenario
 
 A (simple) test class contains a set of properties which are validated by fluent `TestClassValidator` to show the specific versatility of FluentValidation.
 
-A valid and an invalid JSON-file are deserialized and validated.
+A valid and an invalid JSON-file are de-serialized and validated.
 
 To see the specific validations, we take a look at the self-explanatory code of the `TestClassValidator`:
 
